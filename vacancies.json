@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "ML Engineer",
+    "skills": ["python", "pytorch", "docker", "mlops"]
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "skills": ["python", "sql", "statistics", "pandas"]
+  },
+  {
+    "id": 3,
+    "title": "NLP Engineer",
+    "skills": ["python", "nlp", "transformers"]
+  }
+]
