@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "id": "10eb9849-0349-4db0-8f3b-b28711ac0e2b",
+    "name": "Куликов Матвей",
+    "phone": "12-34-56",
+    "email": "example@mail.ru",
+    "parsed_resume": {
+      "skills": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Git",
+        "Docker",
+        "FastAPI",
+        "sklearn",
+        "pytorch",
+        "openai",
+        "ML"
+      ],
+      "experience_years": 3,
+      "quality": 8,
+      "summary": "Middle Data Scientist с 3-летним опытом в кластеризации, RAG-системах и NAS. Сильный стек: Python, PyTorch, sklearn, FastAPI. Выпускник СПбГУ ВМК."
+    },
+    "matched_vacancy": {
+      "id": 1,
+      "title": "ML Engineer",
+      "confidence": 85
+    }
+  },
+  {
+    "id": "fc16b53e-c048-40c0-9f31-3b0d13d3bef7",
+    "name": "Альберт Эйнштейн",
+    "parsed_resume": {
+      "skills": [
+        "Python",
+        "PyTorch",
+        "scikit-learn",
+        "XGBoost",
+        "Transformers",
+        "Sentence-Transformers",
+        "LangChain",
+        "Haystack",
+        "DeepEval",
+        "PostgreSQL",
+        "PgVector",
+        "Docker",
+        "FastAPI",
+        "Airflow",
+        "MLflow",
+        "Redis",
+        "Kafka",
+        "OpenAI",
+        "xAI Grok",
+        "HuggingFace",
+        "RAG/agent systems",
+        "NLP (embeddings, NER, классификация, топик-моделирование)",
+        "CV (классификация, сегментация)",
+        "Feature engineering",
+        "A/B tests",
+        "MLOps",
+        "ONNX/TensorRT",
+        "Prometheus/Grafana",
+        "Backend (FastAPI, Django)",
+        "Data Engineering (ETL, ClickHouse)"
+      ],
+      "experience_years": 24,
+      "quality": 9,
+      "summary": "Senior Data Scientist/ML Engineer с 24-летним опытом. Эксперт в RAG-платформах, LLM-интеграции, MLOps, оптимизации моделей. Ключевые достижения: RAG-система (30k+ запросов/сутки), NAS-пайплайн (-40% времени экспериментов), кластеризация 1.2M документов/мес, оптимизация inference (-35% затрат)."
+    },
+    "match": {
+      "matched": true,
+      "vacancy_id": 1,
+      "vacancy_title": "ML Engineer",
+      "confidence": 100,
+      "explanation": "Полное совпадение ключевых навыков: Python, PyTorch, Docker, MLOps. 24 года опыта + достижения в RAG/ML-инфраструктуре идеально подходят."
+    },
+    "contact": {
+      "phone": "+71234567890",
+      "email": "albert@mail.ru",
+      "telegram": "@akbert"
+    }
+  }
+]

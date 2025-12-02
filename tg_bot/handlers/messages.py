@@ -1,8 +1,9 @@
 """Обработчики текстовых сообщений от пользователей"""
-
 from loguru import logger
 from telegram import Update
 from telegram.ext import ContextTypes
+
+from ai_agent.agent import agent_loop
 
 
 async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -22,28 +23,23 @@ async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE
             "Минимальная длина — *50 символов*.\n"
             "Текущая длина: {len(text)} символов.\n\n"
             "Используй /help для примера формата.",
-            parse_mode="Markdown"
+            parse_mode="HTML"
         )
         return
 
     processing_msg = await update.message.reply_text(
         "📥 *Получил твоё резюме...*\n"
         "Сохраняю и обрабатываю...",
-        parse_mode="Markdown"
+        parse_mode="HTML"
     )
 
     try:
         logger.info(f'text for messages: {text}')
-        # TODO: Формируем ответ тут
-        success_text = f"""
-                        ✅ *Резюме успешно сохранено!*
-                        *🔄 Что дальше:*
-                        ФОРМИРУЕМ ОТВЕТ
-                        """
+        success_text = agent_loop(str(user.id), text)
 
         await processing_msg.edit_text(
             success_text,
-            parse_mode="Markdown"
+            parse_mode="HTML"
         )
 
         logger.info(f"Resume saved for user {user.id}: {['filename']}")
@@ -55,5 +51,5 @@ async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE
             "❌ *Произошла ошибка при сохранении резюме.*\n\n"
             "Попробуй отправить резюме ещё раз через пару минут.\n"
             "Если ошибка повторится — свяжись с администратором.",
-            parse_mode="Markdown"
+            parse_mode="HTML"
         )

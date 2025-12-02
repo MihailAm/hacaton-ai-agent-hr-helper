@@ -1,16 +1,11 @@
 """Основной файл бота. Запускает приложение и регистрирует обработчики"""
 
-import os
-import sys
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 from loguru import logger
 from telegram.ext import Application, CommandHandler, MessageHandler, filters
 
-from handlers import commands, messages
+from tg_bot.handlers import commands, messages
 
-TOKEN = '8344673772:AAHiHAZPZSsP_8SB5ryWm701RAK4TS4pfEo'
+TOKEN = "8344673772:AAHiHAZPZSsP_8SB5ryWm701RAK4TS4pfEo"
 
 
 def setup_handlers(application: Application):
@@ -49,7 +44,6 @@ def main():
         logger.error(f"Ошибка конфигурации: {e}")
     except Exception as e:
         logger.error(f"Ошибка при запуске бота: {e}")
-
 
 
 if __name__ == "__main__":
